@@ -25,7 +25,9 @@ User.init(
         // username column
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            // no duplicate usernames
+            unique: true
         },
         // password column
         password: {

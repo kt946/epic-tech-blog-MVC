@@ -51,6 +51,32 @@ router.post('/', (req, res) => {
         });
 });
 
+// POST /api/users/login
+router.post('/login', (req, res) => {
+    // find the instance of a user that contains the user's credentials
+    // expects {username: 'RandomUser', password: 'password12345'}
+    User.findOne({
+        where: {
+            // unique identifier
+            username: req.body.username
+        }
+    }).then(dbUserData => {
+        if (!dbUserData) {
+            res.status(400).json({ message: 'No user with that username! '});
+            return;
+        }
+
+        // Verify user password
+        const validPassword = dbUserData.checkPassword(req.body.password);
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
+            
+        res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+});
+
 // DELETE /api/users/1
 router.delete('/:id', (req, res) => {
     User.destroy({
