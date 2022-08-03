@@ -7,6 +7,8 @@ const bcrypt = require('bcrypt');
 class User extends Model {
     // method to run on instance data (per user) to check password
     checkPassword(loginPw) {
+        // pass and compare plaintext password with object's hashed password
+        // if passwords match, return true, else return false
         return bcrypt.compareSync(loginPw, this.password);
     }
 }

@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
     })
         .then(dbUserData => {
             if(!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found with this id!' });
                 return;
             }
             res.json(dbUserData);
@@ -66,7 +66,8 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        // Verify user password
+        // verify user password with instance method on dbUserData object
+        // pass in password from login request
         const validPassword = dbUserData.checkPassword(req.body.password);
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect password!' });
@@ -86,7 +87,7 @@ router.delete('/:id', (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found with this id!' });
                 return;
             }
             res.json(dbUserData);
