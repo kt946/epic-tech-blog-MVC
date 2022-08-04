@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 
+// route to display all posts on the homepage
 router.get('/', (req, res) => {
     Post.findAll({
         order: [['created_at', 'DESC']],
@@ -29,12 +30,19 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             // send post data to homepage template
             // use sequelize get() method to serialize the object into specific properties
-            res.render('homepage', dbPostData[0].get({ plain: true }));
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+
+            res.render('homepage', { posts });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+// route to login page
+router.get('/login', (req, res) => {
+    res.render('login');
 });
   
 module.exports = router;
