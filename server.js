@@ -1,13 +1,29 @@
 const express = require('express');
 const routes = require('./controllers/');
 const sequelize = require('./config/connection');
-// require express-handlebars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
 const path = require('path');
+const session = require('express-session');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// set up express.js session and connect to sequelize database
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+    secret: 'Tech Blog Super secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+
+app.use(session(sess));
+
+const hbs = exphbs.create({});
 
 // set up handlebars.js as template engine
 app.engine('handlebars', hbs.engine);

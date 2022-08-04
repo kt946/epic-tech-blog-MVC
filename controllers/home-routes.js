@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 
 // route to display all posts on the homepage
 router.get('/', (req, res) => {
+    console.log(req.session);
     Post.findAll({
         order: [['created_at', 'DESC']],
         attributes: [
@@ -42,6 +43,11 @@ router.get('/', (req, res) => {
 
 // route to login page
 router.get('/login', (req, res) => {
+    // if logged in already, redirect to homepage
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
     res.render('login');
 });
   
