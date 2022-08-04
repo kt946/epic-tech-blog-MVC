@@ -1,22 +1,46 @@
-<form class="border border-dark border-3 rounded my-2 w-50 mx-auto">
+<!-- Login Form -->
+<form id="login-form" class="border border-dark border-3 rounded my-2 w-50 mx-auto">
     <div class="fw-bold fs-3 text-bg-dark p-2 ps-4">
         Login
     </div>
     <div class="m-4 fs-5 fw-semibold">
         <div>
-            <label for="username-login" class="form-labe fs-4">Username</label>
+            <label for="username-login" class="form-label fs-4">Username</label>
             <input type="text" id="username-login" class="form-control border border-3 border-dark"/>
         </div>
         <div>
             <label for="password-login" class="form-label fs-4">Password</label>
             <input type="text" id="password-login" class="form-control border border-3 border-dark"/>
+        </div>
+        <div class="d-grid my-3">
+            <button type="submit" class="btn btn-primary btn-lg fs-5 fw-semibold">Login!</button>
+        </div>
+        <button id="signup-link" class="btn btn-link fs-5 fw-semibold">Sign up instead!</button>
+    </div>
+</form>
+
+<!-- Sign Up Form -->
+<form id="signup-form" class="border border-dark border-3 rounded my-2 w-50 mx-auto d-none">
+    <div class="fw-bold fs-3 text-bg-dark p-2 ps-4">
+        Sign Up
+    </div>
+    <div class="m-4 fs-5 fw-semibold">
+        <div>
+            <label for="username-signup" class="form-label fs-4">Username</label>
+            <input type="text" id="username-signup" class="form-control border border-3 border-dark"/>
+        </div>
+        <div>
+            <label for="password-signup" class="form-label fs-4">Password</label>
+            <input type="text" id="password-signup" class="form-control border border-3 border-dark"/>
             <div class="form-text">
                 Your password must be at least 4 characters long.
             </div>
         </div>
-        <div class="d-grid my-2">
-            <button type="submit" class="btn btn-primary btn-lg fs-5 fw-semibold">Login!</button>
+        <div class="d-grid my-3">
+            <button type="submit" class="btn btn-primary btn-lg fs-5 fw-semibold">Sign Up!</button>
         </div>
-        <a href="" class="text-decoration-none">Sign up instead!</a>
+        <button id="login-link" class="btn btn-link fs-5 fw-semibold">Login instead!</button>
     </div>
 </form>
+
+<script src="/javascript/login.js"></script>
