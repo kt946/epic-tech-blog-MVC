@@ -13,6 +13,8 @@
     </div>
 </article>
 
+<!-- conditionally render element -->
+{{#if loggedIn}}
 <!-- add comment form -->
 <form id="comment-form" class="border border-dark border-3 rounded my-2">
     <div class="m-4 fs-5 fw-semibold d-flex flex-column">
@@ -23,6 +25,7 @@
         </div>
     </div>
 </form>
+{{/if}}
 
 <!-- container for comments -->
 <div class="comments-section my-3">
@@ -38,4 +41,7 @@
     {{/each}}
 </div>
 
+<!-- conditionally render script -->
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{/if}}
