@@ -17,3 +17,11 @@ main {
 main ul {
     list-style: none;
 }
+
+#comment-form textarea {
+    min-height: 10vh;
+}
+
+#post-form textarea {
+    min-height: 10vh;
+}

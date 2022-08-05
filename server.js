@@ -4,6 +4,8 @@ const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const session = require('express-session');
+// import helper functions
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,7 +25,8 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({});
+// pass helpers to handlebars templates
+const hbs = exphbs.create({ helpers });
 
 // set up handlebars.js as template engine
 app.engine('handlebars', hbs.engine);

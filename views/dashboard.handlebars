@@ -1,0 +1,20 @@
+<!-- create post form -->
+<section>
+    <div class="d-grid col-2 mx-auto my-2 mb-3">
+        <button type="button" class="new-post-btn btn btn-primary btn-lg fw-semibold fs-4">New Post</button>
+    </div>
+    <form id="post-form" class="border border-dark border-3 rounded my-2">
+        <div class="fw-bold fs-3 text-bg-dark p-2 ps-4">
+            Create New Post
+        </div>
+        <div class="m-4 fs-5 fw-semibold d-flex flex-column">
+            <label for="post-title" class="form-label fs-4">Title</label>
+            <input type="text" id="post-title"  name="post-title" class="border border-dark border-2 rounded fw-semibold p-2"/>
+            <label for="post-content" class="form-label fs-4">Content</label>
+            <textarea id="post-content" name="post-content" class="border border-dark border-2 rounded fw-semibold p-2"></textarea>
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-primary btn-lg fw-semibold">Create!</button>
+            </div>
+        </div>
+    </form>
+</section>
