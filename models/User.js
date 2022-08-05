@@ -1,6 +1,7 @@
 // import Model class, DataTypes object, sequelize and bcrypt
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require('../config/connection');
+// import bcrypt package for hashing passwords
 const bcrypt = require('bcrypt');
 
 // create User model
@@ -49,7 +50,12 @@ User.init(
             async beforeCreate(newUserData) {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
-            }
+            },
+            // asynchronous function to hash passwords before updating user info
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            },
         },
 
         sequelize,

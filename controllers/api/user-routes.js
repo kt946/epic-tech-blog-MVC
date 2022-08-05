@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
+// route to get all users
 // GET /api/users
 router.get('/', (req, res) => {
     User.findAll({
@@ -14,6 +15,7 @@ router.get('/', (req, res) => {
         });
 });
 
+// route to get single user
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
@@ -49,6 +51,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
+// route to create users
 // POST /api/users
 router.post('/', (req, res) => {
     // expects {username: 'RandomUser', password: 'password12345'}
@@ -73,6 +76,7 @@ router.post('/', (req, res) => {
         });
 });
 
+// route to login
 // POST /api/users/login
 router.post('/login', (req, res) => {
     // find the instance of a user that contains the user's credentials
@@ -109,6 +113,7 @@ router.post('/login', (req, res) => {
 });
 
 // route to logout of session
+// POST /api/users/logout
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -119,6 +124,30 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// route to update user info
+// PUT /api/users/1
+router.put('/:id', (req, res) => {
+    // expects {username: 'NewUserName', password: 'NewPassword'}
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => {
+            if (!dbUserData[0]) {
+                res.status(404).json({ message: 'No user found with this id!' });
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// route to delete single user
 // DELETE /api/users/1
 router.delete('/:id', (req, res) => {
     User.destroy({

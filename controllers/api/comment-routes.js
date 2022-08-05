@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Comment, User } = require('../../models');
+// import middleware function to authguard routes
+const withAuth = require('../../utils/auth');
 
 // get all comments
 router.get('/', (req, res) => {
@@ -25,7 +27,7 @@ router.get('/', (req, res) => {
 });
 
 // post a comment
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // expects {comment_text: 'Hello World!', user_id: '1', post_id: 1}
     // check if session exists
     if (req.session) {
@@ -44,7 +46,7 @@ router.post('/', (req, res) => {
 });
 
 // delete a comment
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id
