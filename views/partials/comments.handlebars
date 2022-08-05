@@ -1,0 +1,14 @@
+<!-- container for comments -->
+<div class="comments-section my-3">
+    <!-- use 'this' to refer to parent object/array that is available -->
+    {{#each this}}
+    <section class="comment mx-4 fw-semibold d-flex flex-column border-top border-bottom border-2">
+        <div class="comment-text fs-4 mb-1 mt-2">
+            {{comment_text}}
+        </div>
+        <div class="user-info fs-5 mb-2 mt-1">
+            {{user.username}} on {{created_at}}
+        </div>
+    </section>
+    {{/each}}
+</div>
