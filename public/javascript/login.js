@@ -1,10 +1,11 @@
 // function for sign up form
-async function signupFormHandler(event) {
+async function signup(event) {
     event.preventDefault();
 
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
+    // username must be unique and password at least 4 characters long
     if (username && password) {
         const response = await fetch('/api/users', {
             method: 'post',
@@ -25,7 +26,7 @@ async function signupFormHandler(event) {
 }
 
 // function for login form
-async function loginFormHandler(event) {
+async function login(event) {
     event.preventDefault();
 
     const username = document.querySelector('#username-login').value.trim();
@@ -41,7 +42,7 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        // check response status
+        // check response status, if ok, redirect to homepage
         if (response.ok) {
             document.location.replace('/');
         } else {
@@ -66,7 +67,7 @@ function switchToLogin(event) {
     document.getElementById('login-form').classList.remove('d-none');
 }
   
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signup);
+document.querySelector('#login-form').addEventListener('submit', login);
 document.querySelector('#signup-link').addEventListener('click', switchToSignUp);
 document.querySelector('#login-link').addEventListener('click', switchToLogin);

@@ -20,23 +20,27 @@ router.get('/', (req, res) => {
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
             console.log(err);
-            res.sendStatus(400).json(err);
+            res.status(400).json(err);
         });
 });
 
 // post a comment
 router.post('/', (req, res) => {
     // expects {comment_text: 'Hello World!', user_id: '1', post_id: 1}
-    Comment.create({
-        comment_text: req.body.comment_text,
-        user_id: req.body.user_id,
-        post_id: req.body.post_id,
-    })
-        .then(dbCommentData => res.json(dbCommentData))
-        .catch(err => {
-            console.log(err);
-            res.sendStatus(400).json(err);
-        });
+    // check if session exists
+    if (req.session) {
+        Comment.create({
+            comment_text: req.body.comment_text,
+            // use session id
+            user_id: req.session.user_id,
+            post_id: req.body.post_id,
+        })
+            .then(dbCommentData => res.json(dbCommentData))
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err);
+            });
+    }
 });
 
 // delete a comment
