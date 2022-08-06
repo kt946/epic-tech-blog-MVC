@@ -10,6 +10,18 @@ body {
     flex-direction: column;
 }
 
+.nav-item, .btn-link {
+    color: #acb0b4;
+}
+
+.btn-link {
+    border: none;
+}
+
+.nav-item:hover, .btn-link:hover {
+    color: white;
+}
+
 main {
     flex: 1;
 }
@@ -18,10 +30,16 @@ main ul {
     list-style: none;
 }
 
-#comment-form textarea {
+#signup-link, #login-link {
+    color: #0d6efd;
+}
+
+#comment-form textarea, 
+#post-form textarea, 
+#edit-post-form textarea {
     min-height: 10vh;
 }
 
-#post-form textarea {
-    min-height: 10vh;
+.new-post-btn, .cancel-post-btn {
+    max-width: 270px;
 }

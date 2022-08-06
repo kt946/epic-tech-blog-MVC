@@ -10,10 +10,16 @@
             <label for="post-content" class="form-label fs-4">Content</label>
             <textarea id="post-content" name="post-content" class="border border-dark border-2 rounded fw-semibold p-2">{{post.content}}</textarea>
             <div class="d-grid mt-3">
-                <button type="submit" class="btn btn-primary btn-lg fw-semibold">Update Post</button>
+                <button type="submit" class="btn btn-primary btn-lg fw-semibold">
+                    <i class="bi bi-pencil-square"></i>
+                    Update
+                </button>
             </div>
             <div class="d-grid mt-3">
-                <button type="button" id="delete-post-btn" class="btn btn-primary btn-lg fw-semibold">Delete Post</button>
+                <button type="button" id="delete-post-btn" class="btn btn-primary btn-lg fw-semibold">
+                    <i class="bi bi-trash3"></i>
+                    Delete
+                </button>
             </div>
         </div>
     </form>

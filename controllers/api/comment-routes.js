@@ -6,12 +6,12 @@ const withAuth = require('../../utils/auth');
 // get all comments
 router.get('/', (req, res) => {
     Comment.findAll({
+        order: [['created_at', 'DESC']],
         attributes: [
             'id',
             'comment_text',
             'created_at'
         ],
-        order: [['created_at', 'DESC']],
         include: [
             {
                 model: User,

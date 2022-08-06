@@ -11,28 +11,28 @@
     <title>The Tech Blog</title>
 </head>
 <body>
-    <header class="text-bg-dark p-2 container-fluid">
+    <header class="bg-dark">
         <nav class="d-flex">
             <ul class="navbar-nav d-flex flex-row flex-wrap p-3 fw-semibold">
-                <li class="nav-item fs-4 m-2 mx-4">
-                    <a class="nav-link bg-warning py-2 px-3" href="/">Home</a>
+                <li class="nav-item fs-4 mx-4">
+                    <a class="nav-link p-1" href="/">Home</a>
+                </li>
+                <li class="nav-item fs-4 mx-4">
+                    <a class="nav-link p-1" href="/dashboard">Dashboard</a>
                 </li>
                 {{#if loggedIn}}
-                <li class="nav-item fs-4 m-2 mx-4">
-                    <a class="nav-link bg-success py-2 px-3" href="/dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item m-2 mx-4">
-                    <button id="logout" class="btn btn-link text-decoration-none py-2 px-3 fw-semibold fs-4 text-white bg-danger">Logout</button>
+                <li class="nav-item mx-4">
+                    <button id="logout" class="btn btn-link text-decoration-none p-1 fw-semibold fs-4 shadow-none">Logout</button>
                 </li>
                 {{else}}
-                <li class="nav-item fs-4 m-2 mx-4">
-                    <a class="nav-link bg-info py-2 px-3" href="/login">Login</a>
+                <li class="nav-item fs-4 mx-4">
+                    <a class="nav-link p-1" href="/login">Login</a>
                 </li>
                 {{/if}}
             </ul>
         </nav>
-        <h1 class="d-flex ms-5 mt-2 mb-3">
-            <a class="fs-1 fw-bold nav-link py-2 px-5 text-bg-primary rounded" href="/">
+        <h1 class="d-flex bg-warning mb-0 py-3">
+            <a class="fs-1 fw-bold nav-link mx-5 my-2 py-2 px-5 text-bg-primary rounded" href="/">
                 The Tech Blog
             </a>
         </h1>

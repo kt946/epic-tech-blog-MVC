@@ -28,8 +28,22 @@ function displayPostForm(event) {
     event.preventDefault();
 
     document.getElementById('post-form').classList.remove('d-none');
+    document.querySelector('.new-post-btn').classList.add('d-none');
+    document.querySelector('.cancel-post-btn').classList.remove('d-none');
+}
+
+// function to hide post form
+function hidePostForm(event) {
+    event.preventDefault();
+
+    document.getElementById('post-form').classList.add('d-none');
+    document.querySelector('.new-post-btn').classList.remove('d-none');
+    document.querySelector('.cancel-post-btn').classList.add('d-none');
 }
 
 document.querySelector('#post-form').addEventListener('submit', addPost);
 
 document.querySelector('.new-post-btn').addEventListener('click', displayPostForm);
+
+document.querySelector('.cancel-post-btn').addEventListener('click', hidePostForm);
+
