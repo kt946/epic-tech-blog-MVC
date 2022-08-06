@@ -1,26 +1,30 @@
 <!-- create post form -->
 <section>
     <div class="d-grid mx-auto my-2 mb-3">
-        <button type="button" class="new-post-btn btn btn-primary btn-lg fw-semibold fs-4 mx-auto">
+        <button type="button" class="new-post-btn btn btn-primary btn-lg fw-semibold rounded-pill mx-auto">
             <i class="bi bi-plus-lg"></i>
-            Add Post
+            Create Post
         </button>
-        <button type="button" class="cancel-post-btn btn btn-primary btn-lg fw-semibold fs-4 mx-auto d-none">
+        <button type="button" class="cancel-post-btn btn btn-primary btn-lg fw-semibold rounded-pill mx-auto d-none">
             <i class="bi bi-x-lg"></i>
             Cancel Post
         </button>
     </div>
     <form id="post-form" class="border border-dark border-3 rounded my-2 d-none">
-        <div class="fw-bold fs-3 text-bg-dark p-2 ps-4">
+        <div class="fw-semibold fs-3 text-bg-dark p-2 px-4">
             Create Post
         </div>
-        <div class="m-4 fs-5 fw-semibold d-flex flex-column">
-            <label for="post-title" class="form-label fs-4">Title</label>
-            <input type="text" id="post-title"  name="post-title" class="border border-dark border-2 rounded fw-semibold p-2"/>
-            <label for="post-content" class="form-label fs-4">Content</label>
-            <textarea id="post-content" name="post-content" class="border border-dark border-2 rounded fw-semibold p-2"></textarea>
+        <div class="mx-4 mt-2 mb-3 fw-semibold">
+            <div>
+                <label for="post-title" class="form-label fs-5 fw-semibold">Title</label>
+                <input type="text" id="post-title"  name="post-title" class="form-control border border-2 border-dark fs-5 fw-semibold"/>
+            </div>
+            <div>
+                <label for="post-content" class="form-label fs-5 fw-semibold mt-2">Content</label>
+                <textarea id="post-content" name="post-content" class="form-control border border-2 border-dark fs-5 fw-semibold"></textarea>
+            </div>
             <div class="d-grid mt-3">
-                <button type="submit" class="btn btn-primary btn-lg fw-semibold">
+                <button type="submit" class="btn btn-primary btn-lg fw-semibold rounded-pill">
                     <i class="bi bi-chat-left-text"></i>
                     Post
                 </button>
@@ -31,7 +35,7 @@
 
 {{#if posts.length}}
 <section>
-    <h2>Your Posts</h2>
+    <h3>Your Posts</h3>
     <ul class="d-flex flex-column list-group">
         {{#each posts as |post|}}
         <li>

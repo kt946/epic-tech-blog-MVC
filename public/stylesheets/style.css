@@ -8,30 +8,40 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: #001d3d;
 }
 
-.nav-item, .btn-link {
+.nav-item {
     color: #acb0b4;
+    margin: 0 1.5rem;
 }
 
-.btn-link {
-    border: none;
-}
-
-.nav-item:hover, .btn-link:hover {
+.nav-item:hover, .nav-item button:hover {
     color: white;
+}
+
+#logout {
+    font-size: 20px;
 }
 
 main {
     flex: 1;
+    min-width: 1236px;
+    padding: 24px 48px;
+    transition: min-width .2s ease-in-out, max-width .2s ease-in-out;
+    background-color: silver;
 }
 
 main ul {
     list-style: none;
 }
 
-#signup-link, #login-link {
-    color: #0d6efd;
+#login-form, 
+#signup-form, 
+.post-section, 
+#post-form, 
+#edit-post-form {
+    background-color: white;
 }
 
 #comment-form textarea, 
@@ -40,6 +50,37 @@ main ul {
     min-height: 10vh;
 }
 
+.creator-info {
+    font-size: 16px;
+}
+
 .new-post-btn, .cancel-post-btn {
     max-width: 270px;
+}
+
+@media screen and (max-width: 1400px) {
+    main {
+        min-width: 70%; 
+    }
+}
+
+@media screen and (max-width: 992px) {
+    main {
+        max-width: 80vw; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        min-width: 90%; 
+        padding: 12px 24px;
+    }
+
+    .nav-item {
+        margin: 0 2vw;
+    }
+
+    .nav-item, #logout {
+        font-size: 18px;
+    }
 }

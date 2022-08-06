@@ -12,25 +12,39 @@
 </head>
 <body>
     <header class="bg-dark">
-        <nav class="d-flex">
-            <ul class="navbar-nav d-flex flex-row flex-wrap p-3 fw-semibold">
-                <li class="nav-item fs-4 mx-4">
-                    <a class="nav-link p-1" href="/">Home</a>
+        <!-- navigation -->
+        <nav class="d-flex justify-content-center justify-content-md-start">
+            <ul class="navbar-nav flex-row flex-wrap p-2 fs-5">
+                <li class="nav-item">
+                    <a class="nav-link p-1" href="/">
+                        <i class="bi bi-house"></i>
+                        Home
+                    </a>
                 </li>
-                <li class="nav-item fs-4 mx-4">
-                    <a class="nav-link p-1" href="/dashboard">Dashboard</a>
+                <li class="nav-item">
+                    <a class="nav-link p-1" href="/dashboard">
+                        <i class="bi bi-person-circle"></i>
+                        Dashboard
+                    </a>
                 </li>
                 {{#if loggedIn}}
-                <li class="nav-item mx-4">
-                    <button id="logout" class="btn btn-link text-decoration-none p-1 fw-semibold fs-4 shadow-none">Logout</button>
+                <li class="nav-item">
+                    <button id="logout" class="btn btn-link text-decoration-none p-1 border border-0 shadow-none text-reset">
+                        <i class="bi bi-box-arrow-left"></i>
+                        Logout
+                    </button>
                 </li>
                 {{else}}
-                <li class="nav-item fs-4 mx-4">
-                    <a class="nav-link p-1" href="/login">Login</a>
+                <li class="nav-item">
+                    <a class="nav-link p-1" href="/login">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Login
+                    </a>
                 </li>
                 {{/if}}
             </ul>
         </nav>
+        <!-- title -->
         <h1 class="d-flex bg-warning mb-0 py-3">
             <a class="fs-1 fw-bold nav-link mx-5 my-2 py-2 px-5 text-bg-primary rounded" href="/">
                 The Tech Blog
@@ -38,16 +52,19 @@
         </h1>
     </header>
 
-    <main class="mx-5 my-4">
+    <!-- main -->
+    <main class="mx-auto">
 
         {{{ body }}}
         
     </main>
 
+    <!-- footer -->
     <footer class="text-light bg-dark p-3 fs-5 d-flex justify-content-center">
         &copy; 2022 Tech Blog, Inc.
     </footer>
     
+    <!-- script -->
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

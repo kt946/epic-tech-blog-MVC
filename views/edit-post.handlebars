@@ -1,22 +1,26 @@
 <!-- edit post form -->
 <section>
     <form id="edit-post-form" class="border border-dark border-3 rounded my-2">
-        <div class="fw-bold fs-3 text-bg-dark p-2 ps-4">
+        <div class="fw-semibold fs-3 text-bg-dark p-2 px-4">
             Edit Post
         </div>
-        <div class="m-4 fs-5 fw-semibold d-flex flex-column">
-            <label for="post-title" class="form-label fs-4">Title</label>
-            <input type="text" id="post-title"  name="post-title" value="{{post.title}}" class="border border-dark border-2 rounded fw-semibold p-2"/>
-            <label for="post-content" class="form-label fs-4">Content</label>
-            <textarea id="post-content" name="post-content" class="border border-dark border-2 rounded fw-semibold p-2">{{post.content}}</textarea>
+        <div class="mx-4 mt-2 mb-3 fw-semibold">
+            <div>
+                <label for="post-title" class="form-label fs-5 fw-semibold">Title</label>
+                <input type="text" id="post-title"  name="post-title" value="{{post.title}}" class="form-control border border-2 border-dark fs-5 fw-semibold"/>
+            </div>
+            <div>
+                <label for="post-content" class="form-label fs-5 fw-semibold mt-2">Content</label>
+                <textarea id="post-content" name="post-content" class="form-control border border-2 border-dark fs-5 fw-semibold">{{post.content}}</textarea>
+            </div>
             <div class="d-grid mt-3">
-                <button type="submit" class="btn btn-primary btn-lg fw-semibold">
+                <button type="submit" class="btn btn-primary btn-lg fw-semibold rounded-pill">
                     <i class="bi bi-pencil-square"></i>
                     Update
                 </button>
             </div>
             <div class="d-grid mt-3">
-                <button type="button" id="delete-post-btn" class="btn btn-primary btn-lg fw-semibold">
+                <button type="button" id="delete-post-btn" class="btn btn-danger btn-lg fw-semibold rounded-pill">
                     <i class="bi bi-trash3"></i>
                     Delete
                 </button>

@@ -1,13 +1,15 @@
 <!-- container for comments -->
-<div class="comments-section my-3">
+<div class="comments-section my-3 d-flex flex-column-reverse">
     <!-- use 'this' to refer to parent object/array that is available -->
     {{#each this}}
-    <section class="comment mx-4 fw-semibold d-flex flex-column border-top border-bottom border-2">
-        <div class="comment-text fs-4 mb-1 mt-2">
-            {{comment_text}}
-        </div>
-        <div class="user-info fs-5 mb-2 mt-1">
-            {{user.username}} on {{format_date created_at}}
+    <section class="comment mx-4 fw-semibold border-top border-bottom border-2">
+        <div class="my-2">
+            <p class="comment-text fs-5">
+                {{comment_text}}
+            </p>
+            <div class="creator-info">
+                {{user.username}} on {{format_date created_at}}
+            </div>
         </div>
     </section>
     {{/each}}
