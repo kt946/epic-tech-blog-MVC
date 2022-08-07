@@ -28,11 +28,11 @@ const postdata = [
 	},
 	{
 		title: 'Ut diam quam nulla porttitor massa.',
-		content: 'Dui faucibus in ornare quam viverra orci sagittis eu volutpat Bibendum ut tristique et egestas..',
+		content: 'Dui faucibus in ornare quam viverra orci sagittis eu volutpat Bibendum ut tristique et egestas.',
 		user_id: 4
 	},
 	{
-		title: 'Massa vitae tortor condimentum lacinia quis vel. ',
+		title: 'Massa vitae tortor condimentum lacinia quis vel.',
 		content: 'Varius vel pharetra vel turpis nunc eget lorem dolor. Lacus laoreet non curabitur gravida arcu ac tortor.',
 		user_id: 2
 	}
