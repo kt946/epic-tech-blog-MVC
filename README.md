@@ -96,7 +96,7 @@ The following images demonstrate the application's appearance and functionality:
 
 ## Links
 
-- [Link to deployed application on Heroku](https://github.com/kt946/tech-blog)
+- [Link to deployed application on Heroku](https://sheltered-mesa-54132.herokuapp.com/)
 
 - [Link to GitHub repository](https://github.com/kt946/tech-blog)
 
