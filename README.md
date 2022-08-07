@@ -3,7 +3,9 @@
 
 ## Description
 
-For this project, I built a CMS-style blog site using the Model-View-Controller (MVC) paradigm as well as technologies such as express-handlebars, dotenv, bcrypt, express-session, and connect-session-sequelize. The Tech Blog allows a developer to publish blog posts and add comments to other developers' posts. making it easier to exchange and discuss new ideas and opinions about the tech industry. Developers can create an account on the site and make posts and comments, view posts created by them on their dashboard, and edit and delete posts. Building the blog site helped me to understand the importance of the separation of concerns and the usefulness of authenticating users and protecting api routes.
+For this project, I built a CMS-style blog site using the Model-View-Controller (MVC) paradigm as well as technologies such as express-handlebars, dotenv, bcrypt, express-session, and connect-session-sequelize. The Tech Blog allows a developer to publish blog posts and add comments to other developers' posts. making it easier to exchange and discuss new ideas and opinions about the tech industry. Developers can create an account on the site and make posts and comments, view posts created by them on their dashboard, and edit and delete posts. Building the blog site helped me to understand the importance of the separation of concerns and the usefulness of authenticating users and protecting api routes. 
+
+Visit the links section for the link to the deployed application on Heroku.
 
 ## Table of Contents
 
