@@ -1,12 +1,12 @@
 <!-- Login Form -->
-<form id="login-form" class="border border-dark border-3 rounded my-2 mx-auto">
-    <div class="fw-semibold fs-3 text-bg-dark p-2 px-4">
+<form id="login-form" class="border custom-border-color border-3 rounded my-2 mx-auto">
+    <div class="custom-bg fw-semibold fs-3 p-2 px-4">
         Login
     </div>
     <div class="mx-4 my-2 fw-semibold">
         <div>
             <label for="username-login" class="form-label fs-5 fw-semibold">Username</label>
-            <input type="text" id="username-login" class="form-control border border-2 border-dark fs-5 fw-semibold"/>
+            <input type="text" id="username-login" class="form-control border border-2 border-dark fs-5"/>
         </div>
         <div>
             <label for="password-login" class="form-label fs-5 fw-semibold mt-2">Password</label>
@@ -18,19 +18,22 @@
                 Login
             </button>
         </div>
-        <button id="signup-link" class="btn btn-link fs-5 fw-semibold">Sign up instead!</button>
+        <div class="d-flex align-items-center pt-2">
+            Don't have an account?
+            <button id="signup-link" class="btn btn-link fw-semibold">Sign up</button>
+        </div>
     </div>
 </form>
 
 <!-- Sign Up Form -->
-<form id="signup-form" class="border border-dark border-3 rounded my-2 mx-auto d-none">
-    <div class="fw-semibold fs-3 text-bg-dark p-2 px-4">
+<form id="signup-form" class="border custom-border-color border-3 rounded my-2 mx-auto d-none">
+    <div class="custom-bg fw-semibold fs-3 p-2 px-4">
         Sign Up
     </div>
     <div class="mx-4 my-2 fw-semibold">
         <div>
             <label for="username-signup" class="form-label fs-5 fw-semibold">Username</label>
-            <input type="text" id="username-signup" class="form-control border border-2 border-dark fs-5 fw-semibold"/>
+            <input type="text" id="username-signup" class="form-control border border-2 border-dark fs-5"/>
         </div>
         <div>
             <label for="password-signup" class="form-label fs-5 fw-semibold mt-2">Password</label>
@@ -45,7 +48,11 @@
                 Sign Up
             </button>
         </div>
-        <button id="login-link" class="btn btn-link fs-5 fw-semibold">Login instead!</button>
+        <div class="d-flex align-items-center pt-2">
+            Already have an account?  
+            <button id="login-link" class="btn btn-link fw-semibold">Login</button>
+        </div>
+        
     </div>
 </form>
 

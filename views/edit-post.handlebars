@@ -1,22 +1,22 @@
 <!-- edit post form -->
 <section>
-    <form id="edit-post-form" class="border border-dark border-3 rounded my-2">
-        <div class="fw-semibold fs-3 text-bg-dark p-2 px-4">
+    <form id="edit-post-form" class="border custom-border-color border-3 rounded my-2">
+        <div class="fw-semibold fs-3 custom-bg p-2 px-4">
             Edit Post
         </div>
         <div class="mx-4 mt-2 mb-3 fw-semibold">
             <div>
                 <label for="post-title" class="form-label fs-5 fw-semibold">Title</label>
-                <input type="text" id="post-title"  name="post-title" value="{{post.title}}" class="form-control border border-2 border-dark fs-5 fw-semibold"/>
+                <input type="text" id="post-title"  name="post-title" value="{{post.title}}" class="form-control border border-2 border-dark fs-5"/>
             </div>
             <div>
                 <label for="post-content" class="form-label fs-5 fw-semibold mt-2">Content</label>
-                <textarea id="post-content" name="post-content" class="form-control border border-2 border-dark fs-5 fw-semibold">{{post.content}}</textarea>
+                <textarea id="post-content" name="post-content" class="form-control border border-2 border-dark fs-5">{{post.content}}</textarea>
             </div>
             <div class="d-grid mt-3">
                 <button type="submit" class="btn btn-primary btn-lg fw-semibold rounded-pill">
                     <i class="bi bi-pencil-square"></i>
-                    Update
+                    Save Edits
                 </button>
             </div>
             <div class="d-grid mt-3">

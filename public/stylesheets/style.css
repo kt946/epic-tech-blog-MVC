@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #003566;
+    --secondary-color: #003566;
+    --tertiary-color: #f5f7f3;
+    --shade-color: #24212E;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,7 +15,27 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: #001d3d;
+    background-color: var(--shade-color);
+    font-family: 'Noto Sans', sans-serif;
+    background: url(../images/body-bg.png) no-repeat fixed center;
+    background-size: cover;
+}
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    border-bottom: 1px solid #acb0b4;
+}
+
+.custom-bg {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+}
+
+.custom-border-color {
+    border-color: var(--secondary-color)!important;
 }
 
 .nav-item {
@@ -24,12 +51,32 @@ body {
     font-size: 20px;
 }
 
+h1 {
+    background: url(../images/header-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+h1 a {
+    margin: 0.5rem 3rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+h1 .nav-link {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 3px 3px 10px black; 
+}
+
+h1 .nav-link:hover {
+    color: white;
+}
+
 main {
     flex: 1;
-    min-width: 1236px;
+    width: 1236px;
     padding: 24px 48px;
-    transition: min-width .2s ease-in-out, max-width .2s ease-in-out;
-    background-color: silver;
+    transition: all .2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 main ul {
@@ -39,9 +86,19 @@ main ul {
 #login-form, 
 #signup-form, 
 .post-section, 
-#post-form, 
+#post-form,
+#comment-form,
+.comment, 
 #edit-post-form {
     background-color: white;
+}
+
+#signup-form, #login-form {
+    max-width: 30rem;
+}
+
+#signup-link, #login-link {
+    padding: 0 0.25rem;
 }
 
 #comment-form textarea, 
@@ -60,20 +117,34 @@ main ul {
 
 @media screen and (max-width: 1400px) {
     main {
-        min-width: 70%; 
+        width: 70%; 
     }
 }
 
 @media screen and (max-width: 992px) {
     main {
-        max-width: 80vw; 
+        width: 80%; 
+    }
+
+    #comment-form textarea, 
+    #post-form textarea, 
+    #edit-post-form textarea {
+        min-height: 14vh;
     }
 }
 
 @media screen and (max-width: 576px) {
     main {
-        min-width: 90%; 
+        width: 90%; 
         padding: 12px 24px;
+    }
+
+    h1 a {
+        margin: 0.5rem auto;
+    }
+
+    h1 .nav-link {
+        font-size: 2.5rem;
     }
 
     .nav-item {
