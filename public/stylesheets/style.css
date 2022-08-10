@@ -144,7 +144,8 @@ main ul {
     }
 
     h1 .nav-link {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        padding: 0.5rem!important;
     }
 
     .nav-item {
@@ -152,6 +153,6 @@ main ul {
     }
 
     .nav-item, #logout {
-        font-size: 18px;
+        font-size: 16px;
     }
 }

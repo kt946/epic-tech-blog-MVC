@@ -1,4 +1,4 @@
-# Tech Blog
+# The Epic Tech Blog
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
 
 ## Description
@@ -12,7 +12,7 @@ Visit the links section for the link to the deployed application on Heroku.
 * [Installation](#installation)
 * [Usage](#usage)
 * [Screenshots](#screenshots)
-* [Technologies](#technologies)
+* [Technologies Used](#technologies-used)
 * [Credits](#credits)
 * [Links](#links)
 * [License](#license)
@@ -79,7 +79,7 @@ The following images demonstrate the application's appearance and functionality:
 
 ![Screenshot of comment form](./public/images/tech-blog-screenshot4.png)
 
-## Technologies
+## Technologies Used
 
 - express
 - express-handlebars
@@ -100,7 +100,7 @@ The following images demonstrate the application's appearance and functionality:
 
 - [Link to deployed application on Heroku](https://sheltered-mesa-54132.herokuapp.com/)
 
-- [Link to GitHub repository](https://github.com/kt946/tech-blog)
+- [Link to GitHub repository](https://github.com/kt946/epic-tech-blog-MVC)
 
 ## License
 
