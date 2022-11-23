@@ -98,7 +98,7 @@ The following images demonstrate the application's appearance and functionality:
 
 ## Links
 
-- [Link to deployed application on Heroku](https://sheltered-mesa-54132.herokuapp.com/)
+- [Link to deployed application](https://epic-tech-blog.onrender.com/)
 
 - [Link to GitHub repository](https://github.com/kt946/epic-tech-blog-MVC)
 
